@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Light overlay */
+  z-index: 9999; /* Ensure it stays above other elements */
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd; /* Light gray border */
+  border-top: 5px solid #007bff; /* Blue color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #1a1a1a; /* Dark background for contrast */
+  color: #f8f9fa; /* Light text for readability */
+  padding: 20px;
+}
+
+.notFoundContainer h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff4757; /* Red error color */
+}
+
+.notFoundContainer p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff; /* Blue button */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.homeLink:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

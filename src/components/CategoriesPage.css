@@ -1,0 +1,116 @@
+/* Category buttons container */
+.categories-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly; /* Evenly space the buttons */
+    overflow-x: auto; /* Enables scrolling when there are too many buttons */
+  
+    background-color: rgb(163, 25, 25);
+    white-space: nowrap;
+    margin-bottom: 1%;
+  }
+  .categories {
+    text-align: center;
+
+  }
+  
+  /* Category button styles */
+  .categories-bar button {
+    flex-shrink: 0; /* Prevents buttons from shrinking when screen size is reduced */
+    min-width: 120px; /* Ensures each button has a minimum width */
+    font-weight: lighter;
+    padding: 10px;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px; /* Optional: adds rounded corners */
+    transition: background-color 0.3s ease;
+  }
+  
+  .categories-bar button:hover {
+    font-weight: bolder;
+    color: white;
+  }
+  
+  .categories-bar button.active {
+    background-color: #382D5E;
+    /* color: #C84449; */
+    color: white;
+    font-weight: bolder;
+    font-size: large;
+  }
+  
+  /* Ensure scroll behavior if needed */
+  .categories-bar::-webkit-scrollbar {
+    height: 8px; /* Customize scrollbar height */
+  }
+  
+  .categories-bar::-webkit-scrollbar-thumb {
+    background: #382D5E;
+    border-radius: 10px;
+  }
+  
+  .categories-bar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  /* News grid layout */
+.news-grid {
+    margin-left: 3%;
+    margin-right: 3%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* News card */
+  .news-card {
+    flex: 0 0 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(''); /* Placeholder for image URL */
+}
+
+/* Adding gradient to the bottom of the image */
+.news-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    border-radius: 0 0 10px 10px;
+}
+  
+  /* Image styling */
+  .news-image {
+    width: 100%;
+    height: 200px; /* Ensures consistent height */
+    object-fit: cover; /* Crops images to fit within the box */
+  }
+  
+  /* News content */
+  .news-content {
+    padding: 15px;
+  }
+  
+  .news-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .news-description {
+    font-size: 14px;
+    color: #555;
+  }

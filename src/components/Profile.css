@@ -1,0 +1,229 @@
+.profile {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.profile h1 {
+    font-size: 2rem;
+    margin-bottom: 2%;
+    color: #382D5E;
+}
+
+/* Updated Profile Info to Match Profile Edit Form */
+.profile-info {
+    background-color: gainsboro;
+    border: 20px solid #382D5E;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    box-sizing: border-box;
+    width: 80%; /* Matched with profile-edit-form */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1%; /* Increased padding to match form */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info h3 {
+    font-size: 1.2rem;
+    width: 80%; /* Matched width to labels in edit form */
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Consistent Button Styling */
+.profile-info button,
+.profile-edit-form button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    width: 80%; /* Ensuring button width consistency */
+    max-width: 250px;
+    background-color: #382D5E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Profile Edit Form */
+.profile-edit-form {
+    background-color: gainsboro;
+    border: 20px solid rgba(16, 16, 16, 0.63);
+    box-shadow: inset 0 0 0 2px #ffffff;
+    box-sizing: border-box;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-edit-form label {
+    text-align: left;
+    width: 80%;
+    min-width: 100px;
+}
+
+.profile-edit-form input {
+    padding: 8px;
+    font-size: 1rem;
+    margin-top: 5px;
+    width: 100%;
+}
+.needUserErrorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Darker text for readability */
+  }
+  
+  .needUserErrorContainer h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .needUserErrorContainer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+  }
+  
+  .needUserErrorContainer a:hover {
+    text-decoration: underline;
+  }
+  
+
+  /* favorites */
+
+  .favorites-section {
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgba(177, 177, 177, 0.764) ;
+    padding:2%;
+    padding-top: .5%;
+    border-radius: 30px;
+  }
+  .fav-articles-header {
+    color: #382D5E;
+  }
+  
+  .favorites-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .favorite-item {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    
+  }
+
+  
+
+    /* News card */
+    .fav-news-card {
+        max-width: 300px;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        scroll-snap-align: start;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        background-image: url(''); /* Placeholder for image URL */
+    }
+
+    
+    @media screen and (max-width: 802px) {
+        .fav-news-card {
+          
+            max-width: 100%;
+        }
+      
+      }
+    /* Adding gradient to the bottom of the image */
+    .fav-news-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        border-radius: 0 0 10px 10px;
+    }
+      
+      /* Image styling */
+      .news-image {
+        width: 100%;
+        height: 200px; /* Ensures consistent height */
+        object-fit: cover; /* Crops images to fit within the box */
+      }
+      
+      /* News content */
+      .news-content {
+        padding: 15px;
+      }
+      
+      .news-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .news-description {
+        font-size: 14px;
+        color: #555;
+      }
+      /* Title text positioned over the image */
+    .news-title {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        width: calc(100% - 30px); /* Ensures title text fits well with margin */
+        padding: 10px;
+        color: white;
+        font-size: clamp(12px, 2vw, 16px);
+        text-decoration: none;
+        font-weight: bold;
+        text-align: left;
+        line-height: 1.4;
+        display: flex;
+        align-items: flex-end;
+        z-index: 1; /* Make sure text is above the image */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        margin-right: 10px; /* Add margin to the right */
+    }
+
+    /* Ensure text doesn't go too close to the right edge */
+    .news-title span {
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limits to 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+
+
+

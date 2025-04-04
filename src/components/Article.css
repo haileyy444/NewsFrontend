@@ -1,0 +1,209 @@
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: black;
+
+}
+.popup-title h2 {
+    color: white;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+}
+
+/* Image Container */
+.popup-image-container {
+    position: relative;
+    width: 100%;
+    height: 40vh; /* Adjust based on screen size */
+    max-height: 300px; /* Prevent excessive growth */
+    margin-bottom: 20px;
+    margin-top: 2%;
+    color: white;
+}
+
+/* Image Styling */
+.popup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Title Overlay */
+.popup-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 10px;
+    color: white;
+    background: linear-gradient(to top, black 0%, transparent 100%);
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Description Styling */
+.popup-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1; /* Ensure the button stays on top */
+}
+
+.read-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Close Button */
+.popup-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background-color: #333;
+}
+
+/* Gradient Overlay for Fade Effect */
+.popup-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 75%;
+        padding: 15px;
+    }
+
+    .popup-image-container {
+        height: 35vh;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+    }
+
+    .read-more-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        width: 75%;
+        max-height: 85vh;
+    }
+
+    .popup-image-container {
+        height: 30vh;
+    }
+
+    .popup-content p {
+        font-size: 13px;
+    }
+
+    .read-more-btn {
+        font-size: 13px;
+        padding: 7px 14px;
+     
+    }
+    .popup-title {
+        font-size: 5vw;
+    }
+}
+
+
+/* Heart Icon Styles */
+#heart {
+    width: 30px;  /* Adjust as necessary */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+  
+  }
+  
+  #heart:hover {
+    transform: scale(1.1); /* Slight grow effect on hover */
+
+  }
+  
+  .heart .heart-fill {
+    fill: transparent;
+    transition: fill 0.3s ease-in-out;
+  }
+  
+  .heart .heart-outline {
+    fill: lightgrey;
+    transition: fill 0.3s ease-in-out;
+  }
+  
+  .heart.favorited .heart-fill {
+    fill: #ff0000;  /* Red color when favorited */
+  }
+  
+  .heart.favorited .heart-outline {
+    fill: #ff0000;  /* Red outline when favorited */
+  }
+  /* When hovered, the outline turns darker and fills with dark grey */
+#heart:hover .heart-outline {
+    fill: #333;
+}
