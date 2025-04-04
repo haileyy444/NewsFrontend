@@ -36,7 +36,7 @@ function App() {
     if(token) {
       try {
         const decoded = jwtDecode(token);
-        console.log("Decoded token ", decoded)
+        // console.log("Decoded token ", decoded)
         setCurrentUser(decoded);
         CapstoneApi.setToken(token);
       }
@@ -63,7 +63,7 @@ function App() {
     }
     try {
       const response = await CapstoneApi.login(loginData);
-      console.log("response app.js handlelogin", response);
+      // console.log("response app.js handlelogin", response);
       if(response && response.token) {
         localStorage.setItem("token", response.token);
        
@@ -95,7 +95,7 @@ function App() {
 
     try{
       const response = await CapstoneApi.register(signupData);
-      console.log("Revcieved token from signup ", response.token)
+      // console.log("Revcieved token from signup ", response.token)
      
       if(response.token) {
         localStorage.setItem("token", response.token);

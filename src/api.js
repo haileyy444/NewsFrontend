@@ -17,7 +17,7 @@ class CapstoneApi {
 static token = null; 
 
   static setToken(newToken) {
-    console.log("Setting new token: ", newToken);
+    // console.log("Setting new token: ", newToken);
     if (!newToken || newToken.split(".").length !== 3) {
       console.error("Invlaid token format recieved " , newToken);
       return;
@@ -42,10 +42,10 @@ static token = null;
 
     const token = CapstoneApi.getToken() || localStorage.getItem('token');
     if (!token) {
-      console.log("No token in api.js request frunction found")
+      console.log("No token in api.js request function found")
     }
 
-    console.log("Using token for request from api.js request", CapstoneApi.token, localStorage.getItem('token'));
+    // console.log("Using token for request from api.js request", CapstoneApi.token, localStorage.getItem('token'));
     //there are multiple ways to pass an authorization token, this is how you pass it in the header.
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
