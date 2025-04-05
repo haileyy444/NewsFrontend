@@ -155,10 +155,10 @@ function App() {
             <>
             {/* only logged in users */}
        
-            <Route exact path="/profile" element={<Profile currentUser={currentUser}/>} />
+            <Route path="/profile" element={<Profile currentUser={currentUser}/>} />
             <Route path="/sources" element={<SearchPage currentUser={currentUser} search="source" />}/> 
             <Route path="/categories/:category" element={<CategoriesPage currentUser={currentUser} />}/>
-            <Route exact path="/articles" element={<ArticleSearchResults />} />
+            <Route path="/articles" element={<ArticleSearchResults />} />
             <Route path="/articles/:search" element={<ArticleSearchResults/>} />
             {/* <Route path="/companies" element={<CompaniesList type="companies" title="Companies"/>} />
             <Route path="/jobs" element={<JobsList type="jobs" title="Jobs" currentUser={currentUser}/>} />
