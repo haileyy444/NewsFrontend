@@ -164,7 +164,7 @@ function App() {
             </>
 
            )} 
-            <Route path="/" element={<Home currentUser={currentUser}/>} />
+            <Route exact path="/" element={<Home currentUser={currentUser}/>} />
             <Route
                   path="*"
                   element={
