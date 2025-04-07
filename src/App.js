@@ -157,9 +157,9 @@ function App() {
        
             <Route exact path="/profile" element={<Profile currentUser={currentUser}/>} />
             <Route exact path="/sources" element={<SearchPage currentUser={currentUser} search="source" />}/> 
-            <Route path="/categories/:category" element={<CategoriesPage currentUser={currentUser} />}/>
-            <Route path="/articles" element={<ArticleSearchResults />} />
-            <Route path="/articles/:search" element={<ArticleSearchResults/>} />
+            <Route exact path="/categories/:category" element={<CategoriesPage currentUser={currentUser} />}/>
+            <Route exact path="/articles" element={<ArticleSearchResults />} />
+            <Route exact path="/articles/:search" element={<ArticleSearchResults/>} />
 
             </>
 
