@@ -155,16 +155,16 @@ function App() {
             <>
             {/* only logged in users */}
        
-            <Route exact path="/profile" element={<Profile currentUser={currentUser}/>} />
-            <Route exact path="/sources" element={<SearchPage currentUser={currentUser} search="source" />}/> 
-            <Route exact path="/categories/:category" element={<CategoriesPage currentUser={currentUser} />}/>
-            <Route exact path="/articles" element={<ArticleSearchResults />} />
-            <Route exact path="/articles/:search" element={<ArticleSearchResults/>} />
+            <Route path="/profile" element={<Profile currentUser={currentUser}/>} />
+            <Route path="/sources" element={<SearchPage currentUser={currentUser} search="source" />}/> 
+            <Route path="/categories/:category" element={<CategoriesPage currentUser={currentUser} />}/>
+            <Route path="/articles" element={<ArticleSearchResults />} />
+            <Route path="/articles/:search" element={<ArticleSearchResults/>} />
 
             </>
 
            )} 
-            <Route exact path="/" element={<Home currentUser={currentUser}/>} />
+            <Route path="/" element={<Home currentUser={currentUser}/>} />
             <Route
                   path="*"
                   element={
