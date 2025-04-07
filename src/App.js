@@ -160,14 +160,11 @@ function App() {
             <Route path="/categories/:category" element={<CategoriesPage currentUser={currentUser} />}/>
             <Route path="/articles" element={<ArticleSearchResults />} />
             <Route path="/articles/:search" element={<ArticleSearchResults/>} />
-            {/* <Route path="/companies" element={<CompaniesList type="companies" title="Companies"/>} />
-            <Route path="/jobs" element={<JobsList type="jobs" title="Jobs" currentUser={currentUser}/>} />
-            <Route path="/companies/:handle" element={<Company items={companies} cantFind="/companies" currentUser={currentUser}/>} />
-         */}
+     
             </>
 
            )} 
-            <Route exact path="/" element={<Home currentUser={currentUser}/>} />
+            <Route path="/" element={<Home currentUser={currentUser}/>} />
             <Route
                   path="*"
                   element={
