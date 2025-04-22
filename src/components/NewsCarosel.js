@@ -46,6 +46,7 @@ const NewsFeed = ({category, categoryName}) => {
             <div className="carousel-container">
                 <button className="scroll-btn left" onClick={() => scroll("left")}>‹</button>
                 <div className="carousel" ref={carouselRef}>
+                    
                     {articles.map((article, index) => (
                         <div
                             key={index}

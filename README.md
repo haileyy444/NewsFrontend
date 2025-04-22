@@ -1,3 +1,8 @@
+
+# About News Stand
+
+This project was created by Hailey D'Angelo as a modern, visual-based News website optumized for web and mobile use. The site utilizes a News API that requires the site to be hosted locally or purchase a production key which I have not done. Recordings will be attached in the project file showcasing the working local site as the API key is not attached in github for security reasons. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

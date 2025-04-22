@@ -7,10 +7,13 @@
   text-align: center;
   color: #382D5E;
 }
+
+
+
   .filters-container {
-    margin-bottom: 20px;
+
     text-align: center;
-    width: 60%;
+
     margin-left: auto;
     margin-right: auto;
     display: flex;
