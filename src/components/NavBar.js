@@ -102,7 +102,7 @@ function NavBar({ currentUser, logout }) {
               <Link to="/categories/science" className="dropdown-item">Science</Link>
               <Link to="/categories/sports" className="dropdown-item">Sports</Link>
               <Link to="/categories/technology" className="dropdown-item">Technology</Link>
-              <h4><a href="/sources" className="slide">News Sources</a></h4>
+              <h4><Link to="/sources" className="slide">News Sources</Link></h4>
             </div>
           </div>
         )}
@@ -122,8 +122,8 @@ function NavBar({ currentUser, logout }) {
         
         {!menuOpen && !currentUser ? (
           <div className="Components">
-            <a href="/login" className="nav-item">Login</a>
-            <a href="/signup" className="nav-item">Signup</a>
+            <Link to="/login" className="nav-item">Login</Link>
+            <Link to="/signup" className="nav-item">Signup</Link >
           </div>
         ) : (
           <>
@@ -135,7 +135,7 @@ function NavBar({ currentUser, logout }) {
                 <span className="nav-header username" >{currentUser.username}</span>
                 {userDropdownOpen && (
                   <div className="dropdown-menu">
-                    <a href="/profile" className="dropdown-item">Profile</a>
+                    <Link to="/profile" className="dropdown-item">Profile</Link >
                     <a href="/" onClick={(e) => { e.preventDefault(); logout(); }} className="dropdown-item">Logout</a>
                   </div>
                 )}
@@ -146,12 +146,12 @@ function NavBar({ currentUser, logout }) {
         <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
           {!currentUser ? (
             <>
-              <a href="/login" className="nav-item" onClick={toggleMenu}>Login</a>
-              <a href="/signup" className="nav-item" onClick={toggleMenu}>Signup</a>
+              <Link to="/login" className="nav-item" onClick={toggleMenu}>Login</Link>
+              <Link to="/signup" className="nav-item" onClick={toggleMenu}>Signup</Link >
             </>
           ) : (
             <>
-              <a href="/profile" className="nav-item" onClick={toggleMenu}>Profile</a>
+              <Link to="/profile" className="nav-item" onClick={toggleMenu}>Profile</Link>
               <a href="/" className="nav-item" onClick={(e) => { e.preventDefault(); logout(); }}>Logout</a>
             </>
           )}
