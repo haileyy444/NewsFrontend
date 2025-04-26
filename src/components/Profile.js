@@ -75,7 +75,11 @@ function Profile({ currentUser }) {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+      </div>
+    );
   }
 
   if (!profile) {
