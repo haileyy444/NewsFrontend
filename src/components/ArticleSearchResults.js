@@ -167,8 +167,8 @@ const ArticleSearchResults = () => {
       <div className="spinner"></div>
     
     </div>
-    ) : error && error.includes("Too many API requests") ? (
-        <p className="error-message">Too many API requests for the free API. Please try again later.</p>
+    ) : error ? (
+        <p className="error-message">API Error - API requires purchase to view articles with production link.</p>
       ) : 
        
           articles.map((article, index) => (
