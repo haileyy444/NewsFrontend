@@ -168,8 +168,12 @@ const ArticleSearchResults = () => {
     
     </div>
     ) : error ? (
-        <p className="error-message">API Error - API requires purchase to view articles with production link.</p>
+     
+        <div className="error-container">
+          <p className="error-message">{error}</p>
+        </div>
       ) : 
+
        
           articles.map((article, index) => (
             <div key={index} className="news-card" onClick={() => openPopup(article)}>
