@@ -68,7 +68,7 @@ const SearchPage = ({search}) => {
 
 
     const handleSourceClick = (source) => {
-        console.log("Opening popup for:", source.name); // 🔍 Debug log
+        // console.log("Opening popup for:", source.name); // 🔍 Debug log
         setSelectedCompany(source); //for popup
         
     }

@@ -3,6 +3,23 @@
 
 This project was created by Hailey D'Angelo as a modern, visual-based News website optumized for web and mobile use. The site utilizes a News API that requires the site to be hosted locally or purchase a production key which I have not done. Recordings will be attached in the project file showcasing the working local site as the API key is not attached in github for security reasons. 
 
+# Production Link
+The production link WILL NOT WORK TO FETCH ANY ARTICLES UNLESS PAID $500 for production API_KEY but is https://newsstand-qhly.onrender.com to view basic structure and view the preloaded favorites of the testuser. 
+
+# Entity Relationship Diagram:
+This diagram represents the structure of the database. It illustrates the relationships between different entities (tables) and their attributes.
+┌──────────────┐          ┌──────────────────┐
+│   Users      │          │  FavoriteArticles │
+├──────────────┤          ├───────────────────┤
+│ username      │◄────────│ user_id (FK)       │
+│ password      │         │ article_title      │
+│ email         │         │ article_url        │
+│ name          │         │ article_summary    │
+└──────────────┘          │ article_author     │
+                          │ article_published_at│
+                          └───────────────────┘
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -73,3 +90,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Usage:
+ This project allows users to register, log in, and manage their favorite articles. 
+ Environment variables that need to be set: API_KEY, SECRET_KEY, NODE_VERSION = 16.20.0 REACT_APP_BASE_URL = https://newsstandbe.onrender.com
+
+# Features:
+Login and Signup, adding a users favorite articles, filtering articles in search, searching by category, sources page with source popup showcasing that sources trending articles (filter by source), image first design.
+
+
+# Contact Information
+News API can be found at https://newsapi.org/docs/get-started
+News Stand website created by @haileyy444 via GitHub

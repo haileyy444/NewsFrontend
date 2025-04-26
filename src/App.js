@@ -89,7 +89,7 @@ function App() {
 
     // Simple validation 
     if (!username || !password || !email || !firstName || !lastName) {
-      console.log("Please enter all required fields.");
+      console.error("Please enter all required fields.");
       return;
     }
 

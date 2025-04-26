@@ -22,19 +22,19 @@ const PopupCompany = ({company, onClose}) => {
             setError(null);
 
            try {
-            console.log("Fetching articles for:", company.name);
 
 
+            //the API already limits the fetch results based on my free version
             const response = await fetch(`https://newsapi.org/v2/everything?q=${company.name}&apiKey=${API_KEY}`);
 
                 const data = await response.json();
-                console.log("API Response:", data);
+                // console.log("API Response:", data);
 
                 if(data.status !== "ok") {
                     throw new Error (data.message || "API request failed");
                 }
                 setArticles(data.articles || []);
-                console.log("Updated articles state:", data.articles); // 🔍 Debug log
+ 
 
            }
            catch (e) {

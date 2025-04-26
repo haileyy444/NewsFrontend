@@ -24,7 +24,7 @@ function Profile({ currentUser }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("useEffect for profile.js start");
+
     if (currentUser && currentUser.username) {
       async function fetchProfile() {
         try {

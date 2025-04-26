@@ -9,7 +9,7 @@ if (!API_KEY) {
 
 export async function fetchNews(query = "", category = "", pageSize = 30) {
   try {
-    console.log("Fetching news with query:", query, "and category:", category);
+    // console.log("Fetching news with query:", query, "and category:", category);
 
     let url = `${NEWS_API_URL}/everything?apiKey=${API_KEY}&pageSize=${pageSize}`;
 
@@ -21,8 +21,10 @@ export async function fetchNews(query = "", category = "", pageSize = 30) {
     }
 
     const response = await fetch(url);
-
-    if (!response.ok) {
+    if (response.status === 426) {
+      throw new Error(`API_KEY not designed for production - payment required`)
+    }
+    else if (!response.ok) {
       throw new Error(`Error fetching news - response not ok: ${response.status} ${response.statusText}`);
     }
 

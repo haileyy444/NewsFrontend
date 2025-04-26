@@ -17,7 +17,7 @@ class CapstoneApi {
 static token = null; 
 
   static setToken(newToken) {
-    // console.log("Setting new token: ", newToken);
+
     if (!newToken || newToken.split(".").length !== 3) {
       console.error("Invlaid token format recieved " , newToken);
       return;
@@ -83,10 +83,10 @@ static token = null;
      /** Get user profile. */
 //USER PROFILE
      static async getUserProfile(username) {
-      console.log("Getting user profile")
+
       let res = await this.request(`users/${username}`);
 
-      console.log("Recieved user profile from api.js", res, res.user)
+
       return res.user;
     }
      /** Update user profile. */
@@ -101,26 +101,36 @@ static token = null;
     static async login(credentials) {
       let res = await this.request("auth/token", credentials, "post");
       if(res && res.token) {
-        console.log(" res and res.token recieved in api.js as ", res, res.token)
+      
         this.setToken(res.token);
         // JoblyApi.token = res.token;
         return res;
       }
       else {
-        console.log("Login fialed. No token recieved");
+        console.log("Login failed. No token recieved");
         throw new Error("Login Failed")
       }
 
      
     }
     static async register(userData) {
-      console.log("api.js starting")
-      let res = await this.request("auth/register", userData, "post")
-      console.log("Stored token api.js ", res.token);
-      localStorage.setItem("token", res.token);
-      CapstoneApi.setToken(res.token);
-    
-      return res;
+
+      try {
+        let res = await this.request("auth/register", userData, "post")
+
+        localStorage.setItem("token", res.token);
+        CapstoneApi.setToken(res.token);
+      
+        return res;
+      }
+      catch (err) {
+        if (err.response && err.response.data && err.response.data.error) {
+          const errorMessage = err.response.data.error.message || "Registration failed!";
+          throw new Error(errorMessage); 
+        } else {
+          throw new Error("Something went wrong. Please try again.");
+        }
+      }
     }
     static logout() {
       this.clearToken();

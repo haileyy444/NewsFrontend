@@ -6,8 +6,7 @@ const FavoritesContext = createContext();
 export function FavoritesProvider({children, currentUser}) {
     const [favorites, setFavorites] = useState([]);
 
-    console.log("current user: ", currentUser);
-    console.log("user favs ", favorites);
+
 
 
     useEffect(() => {
