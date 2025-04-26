@@ -128,7 +128,8 @@ static token = null;
           const errorMessage = err.response.data.error.message || "Registration failed!";
           throw new Error(errorMessage); 
         } else {
-          throw new Error("Something went wrong. Please try again.");
+          let message = err.response?.data?.error?.message || "Something went wrong. Please try again.";
+          throw Array.isArray(message) ? message : [message];
         }
       }
     }
