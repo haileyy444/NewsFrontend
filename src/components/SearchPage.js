@@ -36,7 +36,7 @@ const SearchPage = ({search}) => {
                         throw new Error("API requires purchase to view articles with production link")
                     }
                     else {
-                    throw new Error("Failed to fetch Sources");
+                    throw new Error("Failed to fetch Sources - API requires purchase to view articles with production link");
                     }
                 }
             }
@@ -67,9 +67,7 @@ const SearchPage = ({search}) => {
         );
       }
       
-    if(error) {
-        return <p className='error-message'>Error: {error}</p>
-    }
+   
 
 
     const handleSourceClick = (source) => {

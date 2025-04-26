@@ -37,7 +37,8 @@ const CategoriesPage = () => {
             throw new Error("API requires purchase to view articles with production link")
           }
           else {
-            throw new Error(`Failed to fetch Articles from ${category}`);
+            throw new Error(`Failed to fetch Articles from ${category} - API requires purchase to view articles with production link`);
+   
           }
           
         }
