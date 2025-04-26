@@ -32,7 +32,12 @@ const SearchPage = ({search}) => {
                     setFilteredSources(data.sources);
                 }
                 else {
+                    if(data.status === 426) {
+                        throw new Error("API requires purchase to view articles with production link")
+                    }
+                    else {
                     throw new Error("Failed to fetch Sources");
+                    }
                 }
             }
             catch (e) {

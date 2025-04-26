@@ -33,7 +33,13 @@ const CategoriesPage = () => {
           setArticles(data.articles);
         }    
         else {
-          throw new Error(`Failed to fetch Articles from ${category}`);
+          if(data.status === 426) {
+            throw new Error("API requires purchase to view articles with production link")
+          }
+          else {
+            throw new Error(`Failed to fetch Articles from ${category}`);
+          }
+          
         }
       } catch (e) {
         setError(e.message);
@@ -61,7 +67,7 @@ const CategoriesPage = () => {
       </div>
     );
 
-  if (error) return <p className="error-message">Error: {error}</p>;
+  // if (error) return <p className="error-message">Error: {error}</p>;
 
   return (
         <div className="categories">
