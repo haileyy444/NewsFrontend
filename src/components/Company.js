@@ -91,7 +91,9 @@ const PopupCompany = ({company, onClose}) => {
               </div>
             ) : error ? (
               <p className="error-message">{error}</p>
-            )  : (
+            ) : articles.length === 0 ? (
+              <p>No articles found for {company.name}.</p>
+            ) : (
               articles.map((article, index) => (
                 <div key={index} className="news-card" onClick={() => openPopup(article)}>
                   <img

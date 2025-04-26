@@ -95,6 +95,11 @@ const SearchPage = ({search}) => {
             </div>
     
             {/* News Sources Grid */}
+            {error ? (
+        <div className="error-container">
+          <p className="error-message">{error}</p>
+        </div>
+      ) : (
             <div className="sources-grid">
                 {filteredSources.length > 0 ? (
                   filteredSources.map((source) => (
@@ -114,7 +119,7 @@ const SearchPage = ({search}) => {
             ) : (
                 <p>No articles found.</p>
               )}
-            </div>
+            </div> )}
     
             {/* Popup - Ensure it's outside the grid */}
             {selectedCompany && (
