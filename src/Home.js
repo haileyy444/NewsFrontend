@@ -7,6 +7,7 @@ import NewsFeed from "./components/NewsCarosel";
 
 function Home({companies, jobs, currentUser}) {
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
   return (
     <section className="home"> 
     {currentUser ? (
@@ -15,7 +16,12 @@ function Home({companies, jobs, currentUser}) {
             <h1>
               Explore the News {currentUser.username}!
               </h1>
-              
+              { error ? (
+     
+        <div className="error-container">
+          <p className="error-message">{error}</p>
+        </div>
+      ) : (
      
             <div className="loggedIn-options">
               <NewsFeed category="general" categoryName="Trending"/>
@@ -26,7 +32,7 @@ function Home({companies, jobs, currentUser}) {
               <NewsFeed category="sports" categoryName="Sports Highlights"/>
               <NewsFeed category="health" categoryName="Health & Wellness"/>
          
-            </div>
+            </div> )}
       </>
     ) : (
       <>
