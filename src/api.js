@@ -124,13 +124,10 @@ static token = null;
         return res;
       }
       catch (err) {
-        if (err.response && err.response.data && err.response.data.error) {
-          const errorMessage = err.response.data.error.message || "Registration failed!";
-          throw new Error(errorMessage); 
-        } else {
-          let message = err.response?.data?.error?.message || "Something went wrong. Please try again.";
-          throw Array.isArray(message) ? message : [message];
-        }
+        console.error("Registration error:", err);
+
+        // err is ALREADY an array of errors, based on request() method
+        throw err;  // just rethrow the array up to the caller (SignUp.js)
       }
     }
     static logout() {

@@ -116,6 +116,7 @@ function App() {
  
     } catch (e) {
       console.log("Error signing up ", e)
+      throw e;
     }
     
   }
