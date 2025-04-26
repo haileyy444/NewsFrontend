@@ -35,7 +35,7 @@ function SignUp({handleSubmit}) {
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit(formData);
+        handleSubmit(formData, setError);
       }}>
         <div className="form-group">
           <label htmlFor="username">Username</label>

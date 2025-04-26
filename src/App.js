@@ -84,7 +84,7 @@ function App() {
     }
 
   }
-  const handleSignup = async(signupData) => {
+  const handleSignup = async(signupData, onError) => {
     const { username, password, email, firstName, lastName} = signupData;
 
     // Simple validation 
@@ -116,7 +116,7 @@ function App() {
  
     } catch (e) {
       console.log("Error signing up ", e)
-      console.error(e.message || "Something went wrong. Please try again.");
+      onError(e);
     }
     
   }
